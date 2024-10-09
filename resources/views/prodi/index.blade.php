@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Program Studi') }}
+            {{ ('Program Studi') }}
         </h2>
     </x-slot>
     
@@ -40,7 +40,8 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $prodi->nama }}</td>
                                     <td>
-                                        <a href="#"class="btn btn-secondary">Edit</a>
+                                        <a
+                                            href="{{ route('prodi/edit', $prodi->id) }}"class="btn btn-secondary">Edit</a>
                                         <form action="{{ route('prodi/delete', $prodi->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
@@ -58,3 +59,4 @@
         </div>
     </div>
     </x-app-layout>
+    
